@@ -76,11 +76,11 @@ if(NOT IS_ABSOLUTE ${SRC_DIR})
     set(SRC_DIR ${CMAKE_CURRENT_BINARY_DIR}/${SRC_DIR})
 endif()
 get_filename_component(_parent_dir ${CMAKE_CURRENT_BINARY_DIR} PATH)
-set(_download_link "http://www.python.org/ftp/python/2.7.3/Python-2.7.3.tgz")
-set(_extracted_dir "Python-2.7.3")
+set(_download_link "http://www.python.org/ftp/python/2.7.6/Python-2.7.6.tgz")
+set(_extracted_dir "Python-2.7.6")
 if(WIN32)
-    set(_download_link "https://github.com/jonashaag/cpython/archive/v2.7.3.zip")
-    set(_extracted_dir "cpython-2.7.3")
+    set(_download_link "https://github.com/jonashaag/cpython/archive/v2.7.6.zip")
+    set(_extracted_dir "cpython-2.7.6")
 endif(WIN32)
 if(NOT EXISTS ${SRC_DIR}/${_landmark})
     message(FATAL_ERROR "Failed to locate python source.
@@ -94,7 +94,7 @@ You could try to:
   2) extract the archive in folder: ${_parent_dir}
   3) Check that file \"${_parent_dir}/${_extracted_dir}/${_landmark}\" exists.
   4) re-configure.
-If you already downloaded the source, you could try to re-configure this project passing -DSRC_DIR:PATH=/path/to/Python-2.7.3 using cmake or adding an PATH entry named SRC_DIR from cmake-gui.")
+If you already downloaded the source, you could try to re-configure this project passing -DSRC_DIR:PATH=/path/to/Python-2.7.6 using cmake or adding an PATH entry named SRC_DIR from cmake-gui.")
 endif()
 message(STATUS "SRC_DIR: ${SRC_DIR}")
 
