@@ -55,23 +55,7 @@ set(Py_DEBUG OFF) # TODO - Build debugging interpreter
 option(WITH_PYMALLOC "Define if you want to compile in Python-specific mallocs" ON)
 option(WITH_THREAD "Compile in rudimentary thread support" ON)
 
-# Detect source directory
-set(_landmark "pyconfig.h.in") # CMake will look for this file.
-if(EXISTS ${CMAKE_SOURCE_DIR}/${_landmark})
-    set(SRC_DIR ${CMAKE_SOURCE_DIR})
-elseif(NOT "${SRC_DIR}" STREQUAL "" AND EXISTS ${SRC_DIR}/${_landmark})
-    # Do nothing - SRC_DIR is already set.
-else()
-    foreach(dirname
-        cpython-${PY_VERSION_MAJOR}.${PY_VERSION_MINOR}.${PY_VERSION_PATCH}
-        Python-${PY_VERSION_MAJOR}.${PY_VERSION_MINOR}.${PY_VERSION_PATCH}
-    )
-        set(SRC_DIR "${CMAKE_CURRENT_BINARY_DIR}/../${dirname}")
-        if(EXISTS ${SRC_DIR}/${_landmark})
-            break()
-        endif()
-    endforeach()
-endif()
+set(SRC_DIR "${CMAKE_CURRENT_BINARY_DIR}/../Python-2.7.6")
 if(NOT IS_ABSOLUTE ${SRC_DIR})
     set(SRC_DIR ${CMAKE_CURRENT_BINARY_DIR}/${SRC_DIR})
 endif()
