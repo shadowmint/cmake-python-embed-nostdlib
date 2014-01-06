@@ -96,6 +96,11 @@ Used in:  PY_LONG_LONG
 #ifdef uint32_t
 #define HAVE_UINT32_T 1
 #endif
+
+/* No automake magic in cmake */
+#ifdef __uint32_t_defined
+#define HAVE_UINT32_T 1
+#endif
 #ifdef __APPLE__
 #ifdef _UINT32_T
 #define HAVE_UINT32_T 1
@@ -123,6 +128,11 @@ Used in:  PY_LONG_LONG
 
 /* Signed variants of the above */
 #ifdef int32_t
+#define HAVE_INT32_T 1
+#endif
+
+/* No automake magic in cmake */
+#ifdef __int8_t_defined // ubuntu
 #define HAVE_INT32_T 1
 #endif
 #ifdef __APPLE__

@@ -299,3 +299,6 @@ set_property(TARGET lib_python PROPERTY IMPORTED_LOCATION ${CMAKE_CURRENT_BINARY
 add_dependencies(lib_python libpython-static)
 add_executable(demo ${CMAKE_CURRENT_SOURCE_DIR}/main.c)
 target_link_libraries(demo lib_python)
+if (UNIX) 
+  target_link_libraries(demo pthread m dl util)
+endif()
