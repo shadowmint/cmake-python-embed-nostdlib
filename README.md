@@ -158,8 +158,3 @@ Cross-compiling for Windows from Linux:
     * patch -p0 < cmake/patches-win32/01-dynload_win.patch
     * patch -p0 < cmake/patches-win32/02-signalmodule.patch
     * patch -p0 < cmake/patches-win32/03-mingw32.patch
-
-Note: This branch is for Python version 2.7.1.  Since this buildsystem is
-maintained separately from Python itself it needs to be manually updated
-whenever there is a new release of Python.
-

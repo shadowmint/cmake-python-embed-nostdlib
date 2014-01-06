@@ -292,3 +292,10 @@ install(
 )
 
 endif(HAVE_CONFIGURE_PACKAGE_CONFIG_FILE AND HAVE_WRITE_BASIC_PACKAGE_VERSION_FILE)
+
+# Embedded example
+add_library(lib_python UNKNOWN IMPORTED)
+set_property(TARGET lib_python PROPERTY IMPORTED_LOCATION ${CMAKE_CURRENT_BINARY_DIR}/lib/libpython2.7.a)
+add_dependencies(lib_python libpython-static)
+add_executable(demo ${CMAKE_CURRENT_SOURCE_DIR}/main.c)
+target_link_libraries(demo lib_python)
