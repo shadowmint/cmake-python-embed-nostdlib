@@ -96,6 +96,11 @@ Used in:  PY_LONG_LONG
 #ifdef uint32_t
 #define HAVE_UINT32_T 1
 #endif
+#ifdef __APPLE__
+#ifdef _UINT32_T
+#define HAVE_UINT32_T 1
+#endif
+#endif
 
 #ifdef HAVE_UINT32_T
 #ifndef PY_UINT32_T
@@ -119,6 +124,11 @@ Used in:  PY_LONG_LONG
 /* Signed variants of the above */
 #ifdef int32_t
 #define HAVE_INT32_T 1
+#endif
+#ifdef __APPLE__
+#ifdef _INT32_T
+#define HAVE_INT32_T 1
+#endif
 #endif
 
 #ifdef HAVE_INT32_T
