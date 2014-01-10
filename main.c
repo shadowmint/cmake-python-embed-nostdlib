@@ -4,12 +4,8 @@
 
 int main(int argc, char *argv[]) {
 
-  /* Python library path default is $HOME/lib/python2.7 */
-  char buffer[1024];
-  getcwd(buffer, 1023);
-
   /* Setup */
-  Py_SetPythonHome(buffer);
+  Py_NoSiteFlag = 1;
   Py_SetProgramName(argv[0]);
   Py_Initialize();
 

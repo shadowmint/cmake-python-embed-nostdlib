@@ -722,7 +722,6 @@ initmain(void)
 static void
 initsite(void)
 {
-    /*
     PyObject *m = NULL;
     m = PyImport_ImportModule("site");
     if (m == NULL) {
@@ -733,7 +732,6 @@ initsite(void)
     else {
         Py_DECREF(m);
     }
-    */
 }
 
 /* Parse input from a file and execute it */
