@@ -10,6 +10,15 @@ https://github.com/davidsansome/python-cmake-buildsystem
     cmake .. -G "Ninja"
     ninja
 
+## Demo
+
+A trivial example of embedding python and invoking a c callback
+is given in main.c; too see it in active build, and then run:
+
+    demo
+    import yyy
+    yyy.xxx()
+
 ## Info
 
 This is a replacement buildsystem for Python.  The existing (autotools based)
